@@ -1,0 +1,15 @@
+<section class="py-16 px-6 bg-white dark:bg-gray-900 min-h-screen">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Education</h2>
+  
+      <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
+        <div *ngFor="let edu of educationList" class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-md transition hover:scale-[1.01]">
+          <div class="text-4xl mb-3">{{ edu.icon }}</div>
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ edu.degree }}</h3>
+          <p class="text-gray-700 dark:text-gray-300">{{ edu.institution }}</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">{{ edu.period }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
