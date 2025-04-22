@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { RouterOutlet } from '@angular/router';
@@ -10,10 +10,11 @@ import {
   style,
   animate,
 } from '@angular/animations';
+import { ToastComponent } from '../../components/toast/toast.component';
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, ScrollTopComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, ScrollTopComponent, ToastComponent],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css',
   animations: [
@@ -27,8 +28,16 @@ import {
   
 })
 export class MainLayoutComponent {
+  @ViewChild(ToastComponent) toast!: ToastComponent;
+
   prepareRoute(outlet: any) {
     return outlet.activatedRouteData?.['animation'];
   }
+  handleResumeClick(event: MouseEvent) {
+    setTimeout(() => {
+      this.toast?.show('✅ Resume download started!', 'success');
+    }, 500); // Small delay to ensure toast appears after browser opens download
+  }
+  
   
 }
