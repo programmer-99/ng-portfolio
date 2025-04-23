@@ -39,5 +39,7 @@ export class MainLayoutComponent {
     }, 500); // Small delay to ensure toast appears after browser opens download
   }
   
-  
+  handleCallClick(event: MouseEvent) {
+    this.toast?.show('📞 Call started on mobile', 'success');
+  }
 }

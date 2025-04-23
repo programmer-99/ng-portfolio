@@ -8,9 +8,32 @@
 
 <app-footer></app-footer>
 <app-scroll-top></app-scroll-top>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/923001234567" target="_blank"
+   class="fixed bottom-[240px] right-6 z-50 w-12 h-12 flex items-center justify-center bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 dark:bg-green-400 dark:hover:bg-green-500 transition animate-fade-up"
+   title="WhatsApp">
+  <i class="fab fa-whatsapp text-xl"></i>
+</a>
+
+<!-- LinkedIn Button -->
+<a href="https://www.linkedin.com/in/yourusername" target="_blank"
+   class="fixed bottom-[180px] right-6 z-50 w-12 h-12 flex items-center justify-center bg-blue-700 text-white rounded-full shadow-lg hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 transition animate-fade-up"
+   title="LinkedIn">
+  <i class="fab fa-linkedin-in text-xl"></i>
+</a>
+
+<!-- Call Button -->
+<a href="tel:+923162429282"
+   class="fixed bottom-[120px] right-6 z-50 w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 transition animate-fade-up"
+   title="Call Me">
+  <i class="fas fa-phone-alt text-lg"></i>
+</a>
+
+<!-- Resume Button -->
 <a href="assets/Muhammad-Usama-Resume.pdf"
    (click)="handleResumeClick($event)"
    download
-   class="fixed bottom-20 right-6 z-50 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-full shadow-lg transition-all">
-  📄 Resume
+   class="fixed bottom-[60px] right-6 z-50 w-12 h-12 flex items-center justify-center bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 transition animate-fade-up"
+   title="Download Resume">
+  <i class="fas fa-file-download text-xl"></i>
 </a>
