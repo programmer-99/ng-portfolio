@@ -11,6 +11,10 @@ import {
   animate,
 } from '@angular/animations';
 import { ToastComponent } from '../../components/toast/toast.component';
+import { getAnalytics, logEvent } from 'firebase/analytics';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from '../../../firebase-config';
+
 @Component({
   selector: 'app-main-layout',
   standalone: true,
@@ -29,17 +33,26 @@ import { ToastComponent } from '../../components/toast/toast.component';
 })
 export class MainLayoutComponent {
   @ViewChild(ToastComponent) toast!: ToastComponent;
+  private analytics = getAnalytics(initializeApp(firebaseConfig)); 
 
   prepareRoute(outlet: any) {
     return outlet.activatedRouteData?.['animation'];
   }
   handleResumeClick(event: MouseEvent) {
+    this.trackEvent('Resume');
     setTimeout(() => {
       this.toast?.show('✅ Resume download started!', 'success');
-    }, 500); // Small delay to ensure toast appears after browser opens download
+    }, 500); 
   }
   
   handleCallClick(event: MouseEvent) {
     this.toast?.show('📞 Call started on mobile', 'success');
   }
+  trackEvent(buttonName: string) {
+    logEvent(this.analytics, buttonName, {
+      name: buttonName
+    });
+    console.log(`${buttonName} clicked!`);
+  }
+  
 }
