@@ -1,12 +1,28 @@
 <section
-    class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-100 to-purple-200 dark:from-gray-900 dark:to-gray-800 px-4">
-    <h1 class="text-5xl font-bold text-gray-800 dark:text-white mb-4">Hi, I'm Usama 👋</h1>
-    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl">
-        I’m a frontend developer specializing in building beautiful, performant apps with Angular.
-    </p>
-    <a routerLink="/projects"
-        class="mt-8 px-6 py-3 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition">
-        View My Work
-    </a>
+  class="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-blue-100 to-purple-200 dark:from-gray-900 dark:to-gray-800 px-4">
 
+  <!-- Animated Floating Profile Picture -->
+  <div class="relative mb-6 group">
+    <!-- Outer Glow Ring -->
+    <div class="absolute inset-0 rounded-full border-4 border-blue-400 opacity-30 blur-xl animate-ping"></div>
+
+    <!-- Profile Image with float + bounce -->
+    <img src="assets/images/download.jpg"
+         alt="Profile Picture"
+         class="w-40 h-40 object-cover rounded-full border-4 border-white dark:border-gray-700 shadow-xl animate-float z-10">
+  </div>
+
+  <!-- Greeting -->
+  <h1 class="text-5xl font-bold text-gray-800 dark:text-white mb-4">Hi, I'm Usama 👋</h1>
+
+  <!-- Typing Effect Text -->
+  <p class="text-lg text-gray-600 dark:text-gray-300 max-w-xl" [ngStyle]="{ 'width': textWidth + 'px' }">
+    {{ typedText }}
+  </p>
+
+  <!-- CTA Button -->
+  <a routerLink="/projects"
+     class="mt-8 px-6 py-3 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition duration-300">
+    View My Work
+  </a>
 </section>

@@ -1,0 +1,82 @@
+/* Profile Image Styles */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.3s ease; /* Animation on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-out; /* Entrance animation */
+  }
+  
+  /* Hover effect */
+  .profile-img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Keyframe Animation for Fade-In with Slide-Up */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /* Add this CSS to your styles */
+
+  .typing-effect {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden; /* Ensures text is hidden until it's typed */
+    border-right: 3px solid #333; /* Adds a cursor-like effect */
+    width: 0;
+    animation: typing 10s steps(60) 1s forwards, blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+p {
+    white-space: normal;
+    word-wrap: break-word;
+    transition: width 0.2s ease-in-out; 
+  }
+  
+  .max-w-xl {
+    max-width: 100%; 
+  }
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  

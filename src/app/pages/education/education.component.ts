@@ -24,7 +24,7 @@ export class EducationComponent {
     },
     {
       degree: 'Matriculation in Computer Science',
-      institution: 'The Paradise School',
+      institution: 'The Kacarchi City School',
       period: '2015 – 2017',
       icon: '📗'
     }
