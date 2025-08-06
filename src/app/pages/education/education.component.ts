@@ -12,7 +12,7 @@ export class EducationComponent {
   educationList = [
     {
       degree: 'Bachelor of Science in Computer Science',
-      institution: 'Virtual University of Pakistan',
+      institution: 'University of Karachi (UBIT)',
       period: '2020 – 2024',
       icon: '🎓'
     },
