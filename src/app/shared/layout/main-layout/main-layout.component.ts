@@ -21,16 +21,23 @@ import { firebaseConfig } from '../../../firebase-config';
   imports: [CommonModule, RouterOutlet, NavbarComponent, FooterComponent, ScrollTopComponent, ToastComponent],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css',
-  
+  animations: [
+    trigger('routeAnimations', [
+      transition('* <=> *', [
+        style({ opacity: 0, transform: 'scale(0.9) rotate(-2deg)' }),
+        animate('500ms ease-out', style({ opacity: 1, transform: 'scale(1) rotate(0)' })),
+      ]),
+    ]),
+  ]
   
 })
 export class MainLayoutComponent {
   @ViewChild(ToastComponent) toast!: ToastComponent;
   private analytics = getAnalytics(initializeApp(firebaseConfig)); 
 
-  prepareRoute(outlet: any) {
-    return outlet.activatedRouteData?.['animation'];
-  }
+  // prepareRoute(outlet: any) {
+  //   return outlet.activatedRouteData?.['animation'];
+  // }
   handleResumeClick(event: MouseEvent) {
     this.trackEvent('Resume');
     setTimeout(() => {
